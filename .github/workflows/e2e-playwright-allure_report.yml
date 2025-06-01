@@ -92,7 +92,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         if: always()
         with:
-          publish_branch: gh-pages # branch-name to paste history to
+          publish_branch: allure-report # branch-name to paste history to
           publish_dir: allure-history # directory to be published
           user_name: 'github-actions[bot]' # user for publishing
           user_email: 'github-actions[bot]@users.noreply.github.com' # email for publishing
