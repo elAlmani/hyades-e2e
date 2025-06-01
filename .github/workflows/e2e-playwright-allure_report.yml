@@ -35,6 +35,7 @@ jobs:
 
       - name: Start DependencyTrack
         run: |
+          curl -L https://raw.githubusercontent.com/DependencyTrack/hyades/main/docker-compose.yml -o docker-compose.yml
           docker compose -f docker-compose.yml -f docker-compose.override.yml --profile demo up -d --pull always
 
       - name: Generate Random UUID for password use
