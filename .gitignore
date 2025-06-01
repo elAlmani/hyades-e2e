@@ -3,3 +3,6 @@
 
 # Node Dependencies
 node_modules
+
+# Playwright related
+playwright-test-results
