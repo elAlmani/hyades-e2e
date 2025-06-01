@@ -1,3 +1,6 @@
+[![Playwright E2E Tests](https://github.com/elAlmani/hyades-e2e/actions/workflows/e2e-playwright-allure_report.yml/badge.svg)](https://github.com/elAlmani/hyades-e2e/actions/workflows/e2e-playwright-allure_report.yml)
+[![pages-build-deployment](https://github.com/elAlmani/hyades-e2e/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/elAlmani/hyades-e2e/actions/workflows/pages/pages-build-deployment)
+
 # hyades-e2e
 End-to-end tests for OWASP Dependency-Track
 
@@ -169,6 +172,8 @@ Updating the dependencies inside `package.json` also needs updating `package-loc
 ```shell
 npm install
 ```
+
+---
 
 For more details, visit the [official Playwright documentation](https://playwright.dev/) and [Playwright-BDD](https://vitalets.github.io/playwright-bdd/#/) for the BDD approach.
 
