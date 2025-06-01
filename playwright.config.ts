@@ -37,7 +37,7 @@ export default defineConfig({
   timeout: 5 * 60 * 1000, // 5 min
   /* Set the timeout for each executed expect-line in ms */
   expect: {
-    timeout: 5 * 1000, // 5 sec
+    timeout: process.env.CI ? 10 * 1000 : 5 * 1000, // 5 sec
   },
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
@@ -83,9 +83,9 @@ export default defineConfig({
 
     /* low level timeouts in ms */
     // e.g. locator.click()
-    actionTimeout: 5 * 1000, // 5 sec
+    actionTimeout: process.env.CI ? 10 * 1000 : 5 * 1000, // 5 sec
     // e.g. page.goto()
-    navigationTimeout: 5 * 1000, // 5 sec
+    navigationTimeout: process.env.CI ? 10 * 1000 : 5 * 1000, // 5 sec
   },
 
   /* Configure projects for major browsers */

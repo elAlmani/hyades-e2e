@@ -6,3 +6,5 @@ node_modules
 
 # Playwright related
 playwright-test-results
+playwright-tests/**/.*
+playwright-tests/resources/locales/
