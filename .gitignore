@@ -1,8 +1,0 @@
-# idea config
-.idea
-
-# Node Dependencies
-node_modules
-
-# Playwright related
-playwright-test-results
