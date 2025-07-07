@@ -99,7 +99,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         if: always()
         with:
-          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: allure-report # branch-name to paste history to
           publish_dir: allure-history # directory to be published
           user_name: 'github-actions[bot]' # user for publishing
