@@ -84,7 +84,7 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-          ref: main
+          ref: allure-report
           path: latest-test-results
 
       - name: Build test report
