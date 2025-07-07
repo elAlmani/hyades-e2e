@@ -33,10 +33,15 @@ jobs:
                 ALPINE_BCRYPT_ROUNDS: "4"
           EOF
 
+      - name: Checkout Hyades Repository
+        uses: actions/checkout@v4
+        with:
+          repository: DependencyTrack/hyades
+          path: hyades
+
       - name: Start DependencyTrack
         run: |
-          curl -L https://raw.githubusercontent.com/DependencyTrack/hyades/main/docker-compose.yml -o docker-compose.yml
-          docker compose -f docker-compose.yml -f docker-compose.override.yml --profile demo up -d --pull always
+          docker compose -f ./hyades/docker-compose.yml -f docker-compose.override.yml --profile demo up -d --pull always
 
       - name: Generate Random UUID for password use
         run: |

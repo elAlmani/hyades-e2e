@@ -9,7 +9,7 @@ setup('Change Initial Password As Admin', async ({ page }) => {
     const notificationToast = new NotificationToast(page);
 
     await page.goto('/');
-    await loginPage.initialLogin("admin", "admin");
+    await loginPage.login("admin", "admin");
 
     await initialPasswordChangePage.isPasswordChangePageVisible();
     await initialPasswordChangePage.doPasswordChangeFlow("admin", "admin", process.env.RANDOM_PASSWORD);
