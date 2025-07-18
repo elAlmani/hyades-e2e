@@ -70,8 +70,7 @@ jobs:
   publish-results:
     needs: run-playwright-e2e
     runs-on: ubuntu-latest
-    #if: "${{ github.repository_owner == 'DependencyTrack' }}"
-    if: always()
+    if: "${{ github.repository_owner == 'DependencyTrack' }}"
     steps:
       - name: Download test results
         uses: actions/download-artifact@v4
