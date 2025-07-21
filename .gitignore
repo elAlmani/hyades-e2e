@@ -1,0 +1,10 @@
+# idea config
+.idea
+
+# Node Dependencies
+node_modules
+
+# Playwright related
+playwright-test-results
+playwright-tests/**/.*
+playwright-tests/resources/locales/
