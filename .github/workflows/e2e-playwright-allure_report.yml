@@ -18,6 +18,8 @@ jobs:
   run-playwright-e2e:
     timeout-minutes: 30
     runs-on: ubuntu-latest
+    outputs:
+      upload_success: ${{ steps.set-upload-status.outputs.upload_success }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -61,16 +63,26 @@ jobs:
         run: npx playwright test --project=${{ inputs.project || 'chromium_test_workflow' }}
 
       - name: Upload test results
+        id: upload-step
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
         with:
           name: playwright-results
           path: playwright-test-results/allure-results
 
+      - name: Set upload success output
+        id: set-upload-status
+        run: |
+          if [ "${{ steps.upload-step.conclusion }}" == "success" ]; then
+            echo "upload_success=true" >> $GITHUB_OUTPUT
+          else
+            echo "upload_success=false" >> $GITHUB_OUTPUT
+          fi
+
   publish-results:
     needs: run-playwright-e2e
     runs-on: ubuntu-latest
-    if: "${{ github.repository_owner == 'DependencyTrack' }}"
+    if: "${{ needs.run-playwright-e2e.outputs.upload_success == 'true' && github.repository_owner == 'DependencyTrack' }}"
     steps:
       - name: Download test results
         uses: actions/download-artifact@v4
