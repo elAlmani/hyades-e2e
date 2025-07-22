@@ -72,6 +72,7 @@ jobs:
 
       - name: Set upload success output
         id: set-upload-status
+        if: ${{ !cancelled() }}
         run: |
           if [ "${{ steps.upload-step.conclusion }}" == "success" ]; then
             echo "upload_success=true" >> $GITHUB_OUTPUT
