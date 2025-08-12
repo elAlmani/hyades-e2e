@@ -21,7 +21,7 @@ jobs:
     outputs:
       upload_success: ${{ steps.set-upload-status.outputs.upload_success }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
@@ -36,7 +36,7 @@ jobs:
           EOF
 
       - name: Checkout Hyades Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: DependencyTrack/hyades
           path: hyades
@@ -92,7 +92,7 @@ jobs:
           path: playwright-test-results/allure-results
 
       - name: Load test report history
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         if: always()
         continue-on-error: true
         with:
