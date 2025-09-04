@@ -16,7 +16,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@playwright/test": "^1.55.0",
-    "@types/node": "^24.2.1",
+    "@types/node": "^24.3.0",
     "allure-playwright": "^3.3.3",
     "playwright-bdd": "^8.4.1"
   }
