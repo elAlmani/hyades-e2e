@@ -65,7 +65,7 @@ jobs:
       - name: Upload test results
         id: upload-step
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: playwright-results
           path: playwright-test-results/allure-results
